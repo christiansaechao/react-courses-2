@@ -7,21 +7,24 @@
 
 ### Week 1
 
-## Lesson 1 - React Basics
+## Lesson 1 - React Basics 1
+- initializing a React project
 - JSX Basics
 - Components
 - Importing / Exporting Components
 - Props
-- useState
 
 # Lesson 1 Homework
 - Build a landing page using React
 
-## Lesson 2 - React Hooks Basics
+## Lesson 2 - React Basics 2
+- review lesson 1
+- install tailwind with vite
+- rendering lists
 - useState
-- useEffect
-- useRef
-- useMemo
 
 # Lesson 2 Homework
-- Build a Shopping Cart App using an API, useState, and useEffect
+- Recreate your level 1 project
+    - Additional features:
+        - light/dark mode
+        - show/hide section

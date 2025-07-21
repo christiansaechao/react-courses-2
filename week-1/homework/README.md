@@ -9,6 +9,10 @@
 - Build a landing page using React (find a cool website to use as inspiration, don't worry about navigation for now) 
     - If they have photos, take them from the website to use or find replacements for them
     - Try to get it to look as similar to the site as you can
+    - Suggestions if you can't decide:
+        - (https://apple.com)
+        - (https://doordash.com)
+        - (https://uber.com)
 
 - Create two folders in the `src` directory one called `components` and the other `pages`
     - Your landing page should be in the `pages` folder and then imported in the `App.jsx` file
