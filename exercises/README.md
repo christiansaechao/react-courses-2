@@ -60,7 +60,6 @@
         },
     ];
 
-
 `Small beginner friendly projects`
     Dice Roller
     Simulate rolling a dice by generating a random number between 1 and 6.

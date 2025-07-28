@@ -11,4 +11,3 @@ export const SecondComponent = () => {
         <div>This is my second component</div>
     )
 }
-

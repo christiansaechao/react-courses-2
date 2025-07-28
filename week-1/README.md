@@ -17,6 +17,7 @@
 # Lesson 1 Homework
 - Build a landing page using React
 
+# (https://tailwindcss.com/docs/installation/using-vite)
 ## Lesson 2 - React Basics 2
 - review lesson 1
 - install tailwind with vite

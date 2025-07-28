@@ -1,56 +1,73 @@
 import { useState } from "react";
 import "./App.css";
-import { FirstComponent, SecondComponent } from "./components/first-component";
-import MartinsComponent from "./components/another-component";
-import { BerndTechComponent } from "./components/berndTech_component.jsx";
-import MartyComponent from "./components/marty-component.jsx";
-import { SecondBerndTechComponent } from "./components/secondBerndTechComponent.jsx";
+import { NourComponent } from "./components/nour-component";
+import { JinahComponent } from "./components/jinah-component";
+
+/**
+ * 1. create a component, that displays your name
+ * 2. Import it into App.jsx
+ * 3. Create an instance / call your component in the return statement.
+ * @returns
+ */
 
 function App() {
-  const users = [
-    { name: "Bernd", age: 26, location: "Germany" },
-    { name: "Marty", age: 26, location: "Germany" },
-    { name: "Chris", age: 26, location: "Germany" },
-  ];
-
-  const people = [
-    { name: "Alisha", hobby: "Tennis", day: "Thursdays", time: "18:30h" },
-    { name: "Edward", hobby: "Wizardry", day: "Sundays", time: "13:00h" },
-    { name: "Leonard", hobby: "Painting", day: "Mondays", time: "22:00h" },
-  ];
-
-  // marty create a list
-  const objects = [
+  const People = [
     {
-      food: "cheyuktopap",
-      animal: "zebra",
-      mark: "nike",
+      name: "Nour",
+      age: 26,
+      height: "5'10",
+      hometown: "USA",
+    },
+    {
+      name: "Bob",
+      age: 30,
+      height: "6'10",
+      hometown: "USA",
+    },
+    {
+      name: "Amber",
+      age: 28,
+      height: "7'2",
+      hometown: "USA",
     },
   ];
 
-  // bernd creat your own list
+  const People2 = [
+    { name: "John", age: "333", height: "4'8", hometown: "USA" },
+    { name: "Doe", age: "21", height: "5'3", hometown: "North Korea" },
+    { name: "Jinah", age: "222", height: "5'2", hometown: "Korea" },
+  ];
 
   return (
-    <>
-      {users.map(({ name, age, location }) => {
-        return <BerndTechComponent name={name} age={age} location={location} />;
-      })}
-
-      {people.map(({ name, hobby, day, time }) => {
+    <div>
+      <div className="flex flex-col gap-2">
+        {People2.map(({ name, age, height, hometown }, index) => {
+          return (
+            <JinahComponent
+              name={name}
+              age={age}
+              height={height}
+              hometown={hometown}
+              key={`jinahcomponent-${index}`}
+            />
+          );
+        })}
+      </div>
+      <div className="text-red-500">
+        ````````````````````````````````````````````````````````````
+      </div>
+      {People.map((person, index) => {
         return (
-          <SecondBerndTechComponent
-            name={name}
-            hobby={hobby}
-            day={day}
-            time={time}
+          <NourComponent
+            name={person.name}
+            age={person.age}
+            height={person.height}
+            hometown={person.hometown}
+            key={index}
           />
         );
       })}
-
-      {objects.map(({ food, animal, mark }) => {
-        return <MartyComponent food={food} animal={animal} mark={mark} />;
-      })}
-    </>
+    </div>
   );
 }
 export default App;
