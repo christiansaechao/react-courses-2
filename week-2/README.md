@@ -8,5 +8,6 @@
 
 ## React Hooks - Recap useState, components, props
     - useState
+    - conditional rendering 
     - useEffect
-    - axios/api calls in React
+        - axios/api calls in React
