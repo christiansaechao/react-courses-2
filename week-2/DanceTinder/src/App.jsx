@@ -1,4 +1,5 @@
 import Landing from './page/landing';
+import Users from './page/users';
 import './App.css'
 
 /**
@@ -16,6 +17,7 @@ function App() {
   return (
     <>
       <Landing />
+      <Users />
     </>
   )
 }

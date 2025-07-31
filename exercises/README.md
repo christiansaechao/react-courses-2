@@ -72,11 +72,14 @@
 
 # 🟡 Intermediate Exercises (Events, Forms, State, Conditional Rendering)
 
-    Todo List
-    Add todos, mark them done, and delete them.
+    Todo List (useState, .filter, .map, ...spread operator)
+    Functionalities:
+        - create a todo
+        - delete a todo
+        - mark a todo as done with a line through the text
 
     Filter List (.filter()) -> filter method 
-    Filter a list of names by text input.
+        Filter through the list of todos
 
     Dark Mode Toggle (conditional rendering, state, event handlers)
     Toggle a light/dark theme using conditional className and state.
