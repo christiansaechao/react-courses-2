@@ -1,4 +1,4 @@
-import { useState, useEffect, useReducer } from "react";
+import { useState, useEffect } from "react";
 
 /**
  * 1. Build a counter app with two buttons
@@ -9,17 +9,21 @@ import { useState, useEffect, useReducer } from "react";
 
 const Counter = () => {
   const [myBoolean, setMyBoolean] = useState(false);
+
+  const [name, setName] = useState("Arv");
+
+  const [person, setPerson] = useState(defaultPerson);
+  const [count, setCount] = useState(0);
+
+  const increaseCount = () => {
+    setCount((prev) => prev + 1);
+  };
+
   const defaultPerson = {
     name: "person",
     age: 34,
     country: "US",
   };
-  const [person, setPerson] = useState(defaultPerson);
-  const [count, setCount] = useState(0);
-
-  const increaseCount = () => {
-    setCount(prev => prev + 1)
-  }
 
   return (
     <div className="">
