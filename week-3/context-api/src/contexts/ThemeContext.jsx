@@ -8,11 +8,14 @@ const defaultValue = "dark";
  * The Provider component is used to provide the context value to its children.
  * The Consumer component is used to consume the context value.
  */
+
+// context
 export const ThemeContext = createContext(null);
 
+// provider component
 export const ThemeProvider = ({ children, defaultTheme }) => {
-    const [theme, setTheme] = useState(defaultTheme || defaultValue);
-
+    const [theme, setTheme] = useState(defaultTheme || "dark");
+    
     function toggleTheme() {
         setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark'));
     }

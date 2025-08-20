@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router";
+import { NavLink, Link } from "react-router";
 import { ThemeContext } from "../contexts/ThemeContext";
 import { useTheme } from '../custom-hooks/useTheme';
 

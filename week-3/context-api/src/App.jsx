@@ -12,6 +12,7 @@ function App() {
       <div>The current theme is {theme}</div>
       <button onClick={toggleTheme}>Change Theme</button>
       <div>Current User: {user.name}</div>
+      <JinahComponent />
     </>
   );
 }

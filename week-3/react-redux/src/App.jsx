@@ -1,35 +1,58 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import { useSelector, useDispatch } from "react-redux";
+import { useState } from "react";
+import { updateUser } from "./features/user/userSlice";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const { name, email, hobby } = useSelector((state) => state.user);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    hobby: "",
+  });
+
+  const handleFormChange = (e) => {
+    e.preventDefault();
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const onSubmitHandler = (e) => {
+    e.preventDefault();
+    dispatch(updateUser(formData));
+  };
+
+  const dispatch = useDispatch();
+
+  const [fruit, setFruit] = useState(["apple", "banana", "orange"]);
+
+  function ReturnFruitComponet = (fruit) => <Component />
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <form onSubmit={onSubmitHandler} onChange={handleFormChange}>
+        <input name="name" type="text" placeholder="username" />
+        <input name="email" type="text" placeholder="email" />
+        <input name="hobby" type="text" placeholder="hobby" />
+        <button type="submit">Update User</button>
+      </form>
+      {name} {email} {hobby}
+
+      {fruit.map((fruit) => )}
+
+      {fruit.map((fruit) => ReturnFruitComponet(fruit))}
+
+      {fruit.map((fruit) => (
+        <>
+          <Component /> 
+          <SecondComponent />
+        </>
+      ))}
     </>
-  )
+  );
 }
 
-export default App
+export default App;

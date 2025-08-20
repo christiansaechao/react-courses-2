@@ -5,8 +5,8 @@ export const UserProvider = ({ children, defaultUser }) => {
     const [user, setUser] = useState(defaultUser || { name: "Guest" });
 
     return (
-        <UserContext value={{ user }}>
+        <UserContext.Provider value={{ user }}>
         {children}
-        </UserContext>
+        </UserContext.Provider>
     )
 }

@@ -9,7 +9,8 @@ createRoot(document.getElementById("root")).render(
   <StrictMode>
     <ThemeProvider defaultTheme="orange">
       <UserProvider defaultUser={{name: "Joe Black"}}>
-        <App />
+          <App />
+          <MyComopnent />
       </UserProvider>
     </ThemeProvider>
   </StrictMode>

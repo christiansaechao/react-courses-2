@@ -1,35 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
 
+import "./App.css";
+import { useStore } from "./store/gaming";
+/**
+ * Display our lists
+ * function handle form submission
+ * useState for form data
+ */
 function App() {
-  const [count, setCount] = useState(0)
+  const { ownedGames, wishList, stolenGames, recentlyBought } = useStore(
+    (state) => state.games
+  );
 
+  const addToList = useStore((state) => state.addToList);
+  
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+      <form action="">
+        <label htmlFor="game-title">Game Title:</label>
+        <input name="game-title" type="text" />
+        <select name="list-type" id="list">
+          <option value="owned">Owned</option>
+          <option value="wishing">Wishlist</option>
+          <option value="stolen">Stolen</option>
+          <option value="recent">Recent</option>
+        </select>
+        <button type="submit" onClick={() => addToList()}>
+          Submit
         </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      </form>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -5,7 +5,7 @@ import { useState, useContext, createContext } from 'react';
  * Has 2 properties on it: Provider, Consumer
  * Both of these properties are components
  */
-const ThemeContext = createContext(null);
+export const ThemeContext = createContext(null);
 
 export const ThemeProvider = ({ children, defaultTheme }) => {
     // Name, Email | mock data 
