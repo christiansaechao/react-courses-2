@@ -1,6 +1,10 @@
 import { create } from "zustand";
 
-export const useStore = create((set) => ({
+// name: prefixes variables and functions
+// - games/addToList function 
+
+export const gamesStore = create((set) => ({
+  name: "games",
   games: {
     ownedGames: [],
     wishList: [],
@@ -20,15 +24,16 @@ export const useStore = create((set) => ({
 
     if (listType.toLowerCase() === "stolen") {
       set((state) => {
-        ({games: state.stolenGames.append(newGame)})
+        ({ games: state.stolenGames.append(newGame) });
       });
+      
       set((state) => {
-        ({games: state.wishList.filter((item) => item != newGame)})
+        ({ games: state.wishList.filter((item) => item != newGame) });
       });
     }
 
     set((state) => {
-      ({games: state.games.recentlyBought = newGame})
+      ({ games: (state.games.recentlyBought = newGame) });
     });
   },
 }));
