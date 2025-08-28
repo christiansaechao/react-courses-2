@@ -24,6 +24,12 @@ interface RandomUserProps {
 }
 
 function App() {
+  const [count, setCount] = useState(0);
+
+  function sum(num: number, num2: number): void {
+    setCount(num + num2);
+  }
+
   const RemoveFromCart = () => {
     toast.error("Removed from cart");
   };

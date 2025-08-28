@@ -1,0 +1,17 @@
+###
+POST http://localhost:5000/animals
+Content-Type: application/json
+
+{
+    "animal": {
+        "name": "chicken",
+        "species": "bird",
+        "friendly": false,
+        "diet": "omnivore"
+    }
+}
+
+###
+GET http://localhost:5000/animals
+Content-Type: application/json
+###
