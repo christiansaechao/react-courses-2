@@ -10,4 +10,3 @@ export const getUserByName = async (name) => {
     .select("*")
     .eq(`firstname.eq.${name}, lastname.eq.${name}, fullname.eq.${name}`);
 };
-

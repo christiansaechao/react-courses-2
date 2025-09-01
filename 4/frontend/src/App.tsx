@@ -8,53 +8,38 @@ import axios from "axios";
 import type { AxiosResponse } from "axios";
 
 export interface UserDataProps {
-  name: {
-    first: string;
-    last: string;
-  };
-  email: string;
-  dob: {
-    date: string;
-    age: number;
-  };
+  fullname: string;
+  firstname: string;
+  lastname: string;
+  age: number;
+  createdAt: string;
+  updatedAt: string;
 }
 
-interface RandomUserProps {
-  results: Array<UserDataProps>;
+interface UsersProps {
+  data: UserDataProps[];
 }
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  function sum(num: number, num2: number): void {
-    setCount(num + num2);
-  }
-
-  const RemoveFromCart = () => {
-    toast.error("Removed from cart");
-  };
+  const [users, setUsers] = useState<UserDataProps[] | null>(null);
 
   const ToastFunc = () => {
-    toast("Hello World!", {
-      description: "This is a toast notification",
+    toast("Success!", {
+      description: "A new user has been added to the database!",
       action: {
         label: "Undo",
-        onClick: () => RemoveFromCart(),
+        onClick: () => toast.error("You tried to undo the action!"),
       },
       duration: 2000,
     });
   };
 
-  const [user, setUser] = useState<UserDataProps | null>(null);
-
-  // "https://randomuser.me/api/"
-
   const GetUser = async () => {
     try {
-      const { data }: AxiosResponse<RandomUserProps> = await axios.get(
-        "https://randomuser.me/api/"
+      const { data }: AxiosResponse<UsersProps> = await axios.get(
+        "http://localhost:5000/users"
       );
-      setUser(data.results[0]);
+      setUsers(data.data);
     } catch (err: unknown) {
       if (err instanceof Error) {
         throw new Error(err.message);
@@ -70,8 +55,8 @@ function App() {
         Hello
       </Button>
       <Toaster />
-
-      <User name={user?.name.first} age={user?.dob.age} email={user?.email} />
+      {users &&
+        users.map((user) => <User fullname={user?.fullname} age={user?.age} />)}
     </>
   );
 }

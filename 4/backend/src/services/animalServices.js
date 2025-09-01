@@ -15,6 +15,5 @@ export const getAllAnimalsByType = async (type) => {
 
 export const addNewAnimal = async (data) => {
   const response = await supabase.from("animals").insert([data]).select();
-
   return response;
 };

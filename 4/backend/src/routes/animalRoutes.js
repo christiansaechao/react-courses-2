@@ -1,5 +1,9 @@
-import express from 'express';
-import { getAnimals, getAnimalsByType, addNewAnimal } from "../controllers/animalController.js";
+import express from "express";
+import {
+  getAnimals,
+  getAnimalsByType,
+  addNewAnimal,
+} from "../controllers/animalController.js";
 
 /**
  * Routes for animal-related endpoints.
